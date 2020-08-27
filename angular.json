@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "d3-angular"
+    }
+  },
+  "defaultProject": "d3-angular",
+  "cli": {
+    "analytics": "8dd67de0-43b9-46e4-b3a6-aa56bf8faaf2"
+  }
 }
