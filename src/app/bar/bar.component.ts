@@ -9,11 +9,12 @@ import * as d3 from 'd3';
 export class BarComponent implements OnInit {
 
   private data = [
-    {Framework: 'Vue', Stars: '166443', Released: '2014'},
-    {Framework: 'React', Stars: '150793', Released: '2013'},
-    {Framework: 'Angular', Stars: '62342', Released: '2016'},
-    {Framework: 'Backbone', Stars: '27647', Released: '2010'},
-    {Framework: 'Ember', Stars: '21471', Released: '2011'}
+    {City: 'Caracas', Population: '1600000', Census: '2020'},
+    {City: 'Valencia', Population: '900000', Census: '2019'},
+    {City: 'Marcaibo', Population: '500000', Census: '2020'},
+    {City: 'Yaracuy', Population: '100000', Census: '2019'},
+    {City: 'Mérida', Population: '75000', Census: '2020'},
+    {City: 'Vargas', Population: '50000', Census: '2020'}
   ];
 
   private svg;
@@ -41,7 +42,7 @@ export class BarComponent implements OnInit {
     // Create the X-axis band scale
     const x = d3.scaleBand()
     .range([0, this.width])
-    .domain(data.map(d => d.Framework))
+    .domain(data.map(d => d.City))
     .padding(0.2);
 
     // Draw the X-axis on the DOM
@@ -66,10 +67,10 @@ export class BarComponent implements OnInit {
     .data(data)
     .enter()
     .append('rect')
-    .attr('x', d => x(d.Framework))
-    .attr('y', d => y(d.Stars))
+    .attr('x', d => x(d.City))
+    .attr('y', d => y(d.Population))
     .attr('width', x.bandwidth())
-    .attr('height', (d) => this.height - y(d.Stars))
+    .attr('height', (d) => this.height - y(d.Population))
     .attr('fill', '#d04a35');
   }
 
