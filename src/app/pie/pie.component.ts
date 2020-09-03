@@ -82,6 +82,8 @@ export class PieComponent implements OnInit {
     .attr('transform', d => 'translate(' + labelLocation.centroid(d) + ')')
     .style('text-anchor', 'middle')
     .style('font-size', 15);
+    console.log(labelLocation);
+    console.log(pie(this.data));
   }
 
 }
